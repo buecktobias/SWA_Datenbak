@@ -14,23 +14,23 @@
 -- along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 -- (1) docker compose exec mysql sh
--- (2) mysql --user=root --password=p < /sql/create-db-kunde.sql
+-- (2) mysql --user=root --password=p < /sql/create-db-filiale.sql
 -- (3) exit
 
 -- mysqlsh ist *NICHT* im Docker-Image enthalten: https://dev.mysql.com/doc/refman/8.0/en/mysql.html
 
 -- https://dev.mysql.com/doc/refman/8.0/en/create-user.html
 -- https://dev.mysql.com/doc/refman/8.0/en/role-names.html
-CREATE USER IF NOT EXISTS kunde IDENTIFIED BY 'p';
-GRANT USAGE ON *.* TO kunde;
+CREATE USER IF NOT EXISTS filiale IDENTIFIED BY 'p';
+GRANT USAGE ON *.* TO filiale;
 
 -- https://dev.mysql.com/doc/refman/8.0/en/create-database.html
 -- https://dev.mysql.com/doc/refman/8.0/en/charset.html
 -- SHOW CHARACTER SET;
 CREATE DATABASE IF NOT EXISTS filiale CHARACTER SET utf8;
 
-GRANT ALL PRIVILEGES ON *.* to kunde;
+GRANT ALL PRIVILEGES ON filiale.* to filiale;
 
 -- https://dev.mysql.com/doc/refman/8.0/en/create-tablespace.html
 -- .idb-Datei innerhalb vom "data"-Verzeichnis
-CREATE TABLESPACE `kundespace` ADD DATAFILE 'kundespace.ibd' ENGINE=INNODB;
+CREATE TABLESPACE `filialespace` ADD DATAFILE 'filialespace.ibd' ENGINE=INNODB;

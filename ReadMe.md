@@ -70,7 +70,7 @@ Wenn man den eigenen Microservice direkt mit Windows - nicht mit Kubernetes -
 laufen lässt, kann man PostgreSQL und das Administrationswerkzeug pgadmin
 einfach mit _Docker Compose_ starten und später auch herunterfahren.
 
-> ❗ Vor dem 1. Start von PostgreSQL muss das Skript `create-db-kunde.sql`
+> ❗ Vor dem 1. Start von PostgreSQL muss das Skript `create-db-filiale.sql`
 > aus dem Verzeichnis `extras\postgres\sql` nach
 > `C:\Zimmermann\volumes\postgres\sql` kopieren und die Anleitung ausführen.
 > Für die Windows-Verzeichnisse `C:\Zimmermann\volumes\postgres\data`,
@@ -95,7 +95,7 @@ einfach mit _Docker Compose_ starten und später auch herunterfahren.
     # in docker-compose.yaml den User "postgres" wieder aktivieren, d.h. Kommentar entfernen
     # in 1. Shell: docker compose up
     docker compose exec postgres bash
-      psql --dbname=postgres --username=postgres --file=/sql/create-db-kunde.sql
+      psql --dbname=postgres --username=postgres --file=/sql/create-db-filiale.sql
 
     # 2. Shell: Herunterfahren
     docker compose down
@@ -195,7 +195,7 @@ Wenn man den eigenen Microservice direkt mit Windows - nicht mit Kubernetes -
 laufen lässt, kann man MySQL und das Administrationswerkzeug phpMyAdmin einfach
 mit _Docker Compose_ starten und später auch herunterfahren.
 
-> ❗ Vor dem 1. Start von MySQL muss man das Skript `create-db-kunde.sql` aus
+> ❗ Vor dem 1. Start von MySQL muss man das Skript `create-db-filiale.sql` aus
 > dem Projektverzeichnis `extras\mysql\sql` nach
 > `C:\Zimmermann\volumes\mysql\sql` kopieren und die Anleitung ausführen.
 > Dabei wird der DB-User `kunde` und dessen Datenbank `kunde` angelegt, d.h.
@@ -210,7 +210,7 @@ mit _Docker Compose_ starten und später auch herunterfahren.
     # 2. Shell: DB-User "kunde" und dessen Datenbank "kunde" anlegen
     cd extras\mysql
     docker compose exec mysql sh
-      mysql --user=root --password=p < /sql/create-db-kunde.sql
+      mysql --user=root --password=p < /sql/create-db-filiale.sql
 
     # 2. Shell: Herunterfahren
     docker compose down

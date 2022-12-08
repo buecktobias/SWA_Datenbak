@@ -23,7 +23,7 @@
 -- (7) in docker-compose.yaml den User "postgres" wieder aktivieren
 -- (8) docker compose up
 -- (9) docker compose exec postgres bash
--- (10) psql --dbname=postgres --username=postgres --file=/sql/create-db-kunde.sql
+-- (10) psql --dbname=postgres --username=postgres --file=/sql/create-db-filiale.sql
 -- (11) exit
 
 -- https://www.postgresql.org/docs/current/sql-createrole.html
