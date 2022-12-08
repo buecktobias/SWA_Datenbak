@@ -1,62 +1,62 @@
 USE filiale;
 INSERT INTO umsatz (id, betrag, waehrung)
-VALUES (UUID_TO_BIN('10000000-0000-0000-0000-000000000000'), 0, 'EUR');
+VALUES (0, 0, 'EUR');
 INSERT INTO umsatz (id, betrag, waehrung)
-VALUES (UUID_TO_BIN('10000000-0000-0000-0000-000000000001'), 10, 'EUR');
+VALUES (1, 10, 'EUR');
 INSERT INTO umsatz (id, betrag, waehrung)
-VALUES (UUID_TO_BIN('10000000-0000-0000-0000-000000000002'), 20, 'USD');
+VALUES (2, 20, 'USD');
 INSERT INTO umsatz (id, betrag, waehrung)
-VALUES (UUID_TO_BIN('10000000-0000-0000-0000-000000000030'), 30, 'CHF');
+VALUES (30, 30, 'CHF');
 INSERT INTO umsatz (id, betrag, waehrung)
-VALUES (UUID_TO_BIN('10000000-0000-0000-0000-000000000040'), 40, 'GBP');
+VALUES (40, 40, 'GBP');
+
 
 INSERT INTO adresse (id, plz, ort)
-VALUES (UUID_TO_BIN('20000000-0000-0000-0000-000000000000'), '00000', 'Aachen');
+VALUES (0, '00000', 'Aachen');
 INSERT INTO adresse (id, plz, ort)
-VALUES (UUID_TO_BIN('20000000-0000-0000-0000-000000000001'), '11111', 'Augsburg');
+VALUES (1, '11111', 'Augsburg');
 INSERT INTO adresse (id, plz, ort)
-VALUES (UUID_TO_BIN('20000000-0000-0000-0000-000000000002'), '22222', 'Aalen');
+VALUES (2, '22222', 'Aalen');
 INSERT INTO adresse (id, plz, ort)
-VALUES (UUID_TO_BIN('20000000-0000-0000-0000-000000000030'), '33333', 'Ahlen');
+VALUES (30, '33333', 'Ahlen');
 INSERT INTO adresse (id, plz, ort)
-VALUES (UUID_TO_BIN('20000000-0000-0000-0000-000000000040'), '44444', 'Dortmund');
+VALUES (40, '44444', 'Dortmund');
 INSERT INTO adresse (id, plz, ort)
-VALUES (UUID_TO_BIN('20000000-0000-0000-0000-000000000050'), '55555', 'Essen');
+VALUES (50, '55555', 'Essen');
 INSERT INTO adresse (id, plz, ort)
-VALUES (UUID_TO_BIN('20000000-0000-0000-0000-000000000060'), '66666', 'Freiburg');
+VALUES (60, '66666', 'Freiburg');
 
--- admin
 INSERT INTO filiale (id, version, name, email, homepage, umsatz_id, adresse_id, erzeugt, aktualisiert)
-VALUES (UUID_TO_BIN('00000000-0000-0000-0000-000000000000'), 0, 'Admin', 'admin@acme.com',
-        'https://www.acme.com', UUID_TO_BIN('10000000-0000-0000-0000-000000000000'),
-        UUID_TO_BIN('20000000-0000-0000-0000-000000000000'), '2022-01-31 00:00:00', '2022-01-31 00:00:00');
--- HTTP GET
+VALUES (0, 0, 'Admin', 'admin@acme.com',
+        'https://www.acme.com', 0,
+        0, '2022-01-31 00:00:00', '2022-01-31 00:00:00');
+
 INSERT INTO filiale (id, version, name, email, homepage, umsatz_id, adresse_id, erzeugt, aktualisiert)
-VALUES (UUID_TO_BIN('00000000-0000-0000-0000-000000000001'), 0, 'Alpha', 'alpha@acme.de',
-        'https://www.acme.de', UUID_TO_BIN('10000000-0000-0000-0000-000000000001'),
-        UUID_TO_BIN('20000000-0000-0000-0000-000000000001'), '2022-01-01 00:00:00', '2022-01-01 00:00:00');
+VALUES (1, 0, 'Alpha', 'alpha@acme.de',
+        'https://www.acme.de', 1,
+        1, '2022-01-01 00:00:00', '2022-01-01 00:00:00');
 INSERT INTO filiale (id, version, name, email, homepage, umsatz_id, adresse_id, erzeugt, aktualisiert)
-VALUES (UUID_TO_BIN('00000000-0000-0000-0000-000000000002'), 0, 'Alpha', 'alpha@acme.edu',
-        'https://www.acme.edu', UUID_TO_BIN('10000000-0000-0000-0000-000000000002'),
-        UUID_TO_BIN('20000000-0000-0000-0000-000000000002'), '2022-01-02 00:00:00', '2022-01-02 00:00:00');
--- HTTP PUT
+VALUES (2, 0, 'Alpha', 'alpha@acme.edu',
+        'https://www.acme.edu', 2,
+        2, '2022-01-02 00:00:00', '2022-01-02 00:00:00');
+
 INSERT INTO filiale (id, version, name, email, homepage, umsatz_id, adresse_id, erzeugt, aktualisiert)
-VALUES (UUID_TO_BIN('00000000-0000-0000-0000-000000000030'), 0, 'Alpha', 'alpha@acme.ch',
-        'https://www.acme.ch', UUID_TO_BIN('10000000-0000-0000-0000-000000000030'),
-        UUID_TO_BIN('20000000-0000-0000-0000-000000000030'), '2022-01-03 00:00:00', '2022-01-03 00:00:00');
--- HTTP PATCH
+VALUES (30, 0, 'Alpha', 'alpha@acme.ch',
+        'https://www.acme.ch', 30,
+        30, '2022-01-03 00:00:00', '2022-01-03 00:00:00');
+
 INSERT INTO filiale (id, version, name, email, homepage, umsatz_id, adresse_id, erzeugt, aktualisiert)
-VALUES (UUID_TO_BIN('00000000-0000-0000-0000-000000000040'), 0, 'Delta', 'delta@acme.uk',
-        'https://www.acme.uk', UUID_TO_BIN('10000000-0000-0000-0000-000000000040'),
-        UUID_TO_BIN('20000000-0000-0000-0000-000000000040'), '2022-01-04 00:00:00', '2022-01-04 00:00:00');
--- HTTP DELETE
+VALUES (40, 0, 'Delta', 'delta@acme.uk',
+        'https://www.acme.uk', 40,
+        40, '2022-01-04 00:00:00', '2022-01-04 00:00:00');
+
 INSERT INTO filiale (id, version, name, email, homepage, umsatz_id, adresse_id, erzeugt, aktualisiert)
-VALUES (UUID_TO_BIN('00000000-0000-0000-0000-000000000050'), 0, 'Epsilon', 'epsilon@acme.jp',
-        'https://www.acme.jp', null, UUID_TO_BIN('20000000-0000-0000-0000-000000000050'),
+VALUES (50, 0, 'Epsilon', 'epsilon@acme.jp',
+        'https://www.acme.jp', null, 50,
         '2022-01-05 00:00:00', '2022-01-05 00:00:00');
--- zur freien Verfuegung
+
 INSERT INTO filiale (id, version, name, email, homepage, umsatz_id, adresse_id, erzeugt, aktualisiert)
-VALUES (UUID_TO_BIN('00000000-0000-0000-0000-000000000060'), 0, 'Phi', 'phi@acme.cn',
-        'https://www.acme.cn', null, UUID_TO_BIN('20000000-0000-0000-0000-000000000060'),
+VALUES (60, 0, 'Phi', 'phi@acme.cn',
+        'https://www.acme.cn', null, 60,
         '2022-01-06 00:00:00', '2022-01-06 00:00:00');
 
